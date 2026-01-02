@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 엔지니어 포트폴리오 | MS 솔루션 전문가</title>
+    <style>
+        :root {
+            --primary-color: #0078D4; /* Microsoft Blue */
+            --secondary-color: #2b2b2b;
+            --bg-light: #f4f7f9;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item h3 { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 10px; }
+        .skill-item ul { list-style: none; padding: 0; }
+        .skill-item li { font-size: 0.95rem; margin-bottom: 5px; color: #555; }
+        .skill-item li::before { content: "• "; color: var(--primary-color); font-weight: bold; }
+
+        .project-card {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .project-card:last-child { border-bottom: none; }
+        .project-tag {
+            background: #e7f3ff;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .contact-info { text-align: center; padding: 40px 0; }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #888; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Microsoft Solution Expert</h1>
+        <p>인프라 설계 · 구축 · 운영 전문 시스템 엔지니어 [성함]</p>
+    </div>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>About Me</h2>
+        <p>안녕하세요! 저는 <strong>Microsoft 솔루션</strong>을 중심으로 비즈니스 환경에 최적화된 시스템 인프라를 설계하고 구축합니다. 특히 하이브리드 클라우드 환경으로의 전환과 Active Directory 고도화에 강점을 가지고 있으며, 안정적인 운영 프로세스를 수립하는 데 주력하고 있습니다.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+            <div class="skill-item">
+                <h3>Cloud (Azure)</h3>
+                <ul>
+                    <li>Azure IaaS/PaaS 설계</li>
+                    <li>Entra ID (Azure AD) 통합</li>
+                    <li>Azure Virtual Desktop</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Server & Identity</h3>
+                <ul>
+                    <li>Windows Server 2012-2022</li>
+                    <li>Active Directory 설계/구축</li>
+                    <li>Group Policy 보안 강화</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Modern Work</h3>
+                <ul>
+                    <li>Microsoft 365 마이그레이션</li>
+                    <li>Exchange / SharePoint</li>
+                    <li>Intune (MDM/MAM)</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Automation</h3>
+                <ul>
+                    <li>PowerShell Scripting</li>
+                    <li>업무 자동화 프로세스 구축</li>
+                    <li>Infrastructure as Code</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Core Experience</h2>
+        <ul>
+            <li><strong>Design:</strong> 기업 보안 요구사항을 준수하는 Hybrid AD 아키텍처 및 고가용성 서버 클러스터링 설계</li>
+            <li><strong>Build:</strong> 구버전 인프라의 최신 환경 전환(Migration) 및 신규 대규모 인프라 구축 프로젝트 수행</li>
+            <li><strong>Operate:</strong> 모니터링 체계 구축을 통한 사전 장애 예방 및 정기적인 시스템 최적화(Health Check) 수행</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-card">
+            <span class="project-tag">Migration</span>
+            <h3>OO그룹 M365 도입 및 하이브리드 AD 구축</h3>
+            <p>기존 온프레미스 인프라를 클라우드로 확장하여 1,000명 이상의 유저가 사용하는 협업 환경 구축 및 데이터 마이그레이션 성공.</p>
+        </div>
+        <div class="project-card">
+            <span class="project-tag">Security</span>
+            <h3>전사 Windows Server 보안 고도화 프로젝트</h3>
+            <p>200여 대 서버에 대한 표준 보안 정책(GPO)을 수립하고 자동화 패치 시스템 구축을 통해 운영 효율 30% 향상.</p>
+        </div>
+    </section>
+
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p>비즈니스 인프라의 안정성을 함께 고민하겠습니다.</p>
+        <a href="mailto:email@example.com">Email</a> | 
+        <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/username" target="_blank">GitHub</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 System Engineer Portfolio. All rights reserved.
+</footer>
+
+</body>
+</html>
