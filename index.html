@@ -3,184 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시스템 엔지니어 포트폴리오 | MS 솔루션 전문가</title>
+    <title>프로젝트 상세 보기 | MS 솔루션 전문가</title>
     <style>
         :root {
-            --primary-color: #0078D4; /* Microsoft Blue */
+            --primary-color: #0078D4;
             --secondary-color: #2b2b2b;
             --bg-light: #f4f7f9;
             --text-dark: #333;
             --text-light: #fff;
+            --border-color: #e1e4e8;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--bg-light);
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 80px 20px;
-            text-align: center;
+        /* Navigation */
+        nav {
+            background: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
+        /* Header */
+        header {
+            background: #fff;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .project-category {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        h1 { font-size: 2.5rem; margin: 10px 0 20px; color: var(--secondary-color); }
+        
+        .meta-info {
+            display: flex;
+            gap: 30px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .meta-item b { color: var(--text-dark); }
 
-        .container {
-            max-width: 1000px;
+        /* Content */
+        .main-content {
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
-
         section {
             background: #fff;
-            padding: 30px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
         h2 {
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-        }
-
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-item h3 { font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 10px; }
-        .skill-item ul { list-style: none; padding: 0; }
-        .skill-item li { font-size: 0.95rem; margin-bottom: 5px; color: #555; }
-        .skill-item li::before { content: "• "; color: var(--primary-color); font-weight: bold; }
-
-        .project-card {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        .project-card:last-child { border-bottom: none; }
-        .project-tag {
-            background: #e7f3ff;
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background: var(--bg-light);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        .contact-info { text-align: center; padding: 40px 0; }
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
+        .solution-box {
+            background: #f0f7ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
         }
 
-        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #888; }
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .result-item {
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .result-item .number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        footer { text-align: center; padding: 40px; color: #888; }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
+            .meta-info { flex-direction: column; gap: 10px; }
+            .result-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="back-link">← 목록으로 돌아가기</a>
+    </div>
+</nav>
+
 <header>
-    <div class="container">
-        <h1>Microsoft Solution Expert</h1>
-        <p>인프라 설계 · 구축 · 운영 전문 시스템 엔지니어 [성함]</p>
+    <div class="header-content">
+        <div class="project-category">Cloud Migration & Identity</div>
+        <h1>OO그룹 M365 도입 및 하이브리드 AD 구축</h1>
+        <div class="meta-info">
+            <div class="meta-item"><b>Role</b> Lead System Engineer</div>
+            <div class="meta-item"><b>Period</b> 2023.03 - 2023.09 (6개월)</div>
+            <div class="meta-item"><b>Client</b> OO 제조 그룹사</div>
+        </div>
     </div>
 </header>
 
-<div class="container">
-    <section id="about">
-        <h2>About Me</h2>
-        <p>안녕하세요! 저는 <strong>Microsoft 솔루션</strong>을 중심으로 비즈니스 환경에 최적화된 시스템 인프라를 설계하고 구축합니다. 특히 하이브리드 클라우드 환경으로의 전환과 Active Directory 고도화에 강점을 가지고 있으며, 안정적인 운영 프로세스를 수립하는 데 주력하고 있습니다.</p>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skill-grid">
-            <div class="skill-item">
-                <h3>Cloud (Azure)</h3>
-                <ul>
-                    <li>Azure IaaS/PaaS 설계</li>
-                    <li>Entra ID (Azure AD) 통합</li>
-                    <li>Azure Virtual Desktop</li>
-                </ul>
-            </div>
-            <div class="skill-item">
-                <h3>Server & Identity</h3>
-                <ul>
-                    <li>Windows Server 2012-2022</li>
-                    <li>Active Directory 설계/구축</li>
-                    <li>Group Policy 보안 강화</li>
-                </ul>
-            </div>
-            <div class="skill-item">
-                <h3>Modern Work</h3>
-                <ul>
-                    <li>Microsoft 365 마이그레이션</li>
-                    <li>Exchange / SharePoint</li>
-                    <li>Intune (MDM/MAM)</li>
-                </ul>
-            </div>
-            <div class="skill-item">
-                <h3>Automation</h3>
-                <ul>
-                    <li>PowerShell Scripting</li>
-                    <li>업무 자동화 프로세스 구축</li>
-                    <li>Infrastructure as Code</li>
-                </ul>
-            </div>
+<main class="main-content">
+    <section>
+        <h2>Project Overview</h2>
+        <p>전국 5개 지사를 보유한 고객사의 노후화된 온프레미스 인프라를 Microsoft 365 기반의 클라우드 환경으로 전환하고, 보안 강화를 위해 하이브리드 ID 체계를 구축한 프로젝트입니다.</p>
+        <div class="tech-tags">
+            <span class="tag">Azure AD Connect</span>
+            <span class="tag">Exchange Online</span>
+            <span class="tag">Windows Server 2022</span>
+            <span class="tag">PowerShell</span>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Core Experience</h2>
+    <section>
+        <h2>Architecture</h2>
+        <p>온프레미스 AD와 Azure AD 간의 일관된 사용자 경험을 제공하기 위해 Password Hash Synchronization 방식을 채택하였습니다.</p>
+        <div style="background: #eee; width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #999;">
+            [이곳에 아키텍처 구성도 이미지를 삽입하세요]
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>Key Responsibilities</h2>
         <ul>
-            <li><strong>Design:</strong> 기업 보안 요구사항을 준수하는 Hybrid AD 아키텍처 및 고가용성 서버 클러스터링 설계</li>
-            <li><strong>Build:</strong> 구버전 인프라의 최신 환경 전환(Migration) 및 신규 대규모 인프라 구축 프로젝트 수행</li>
-            <li><strong>Operate:</strong> 모니터링 체계 구축을 통한 사전 장애 예방 및 정기적인 시스템 최적화(Health Check) 수행</li>
+            <li><strong>설계:</strong> 멀티 도메인 환경에서의 Azure AD Connect 동기화 범위 및 필터링 정책 설계</li>
+            <li><strong>구축:</strong> Windows Server 2022 기반의 신규 DC 구축 및 FSMO 역할 전송</li>
+            <li><strong>이관:</strong> 기존 Exchange 2016 서버에서 Exchange Online으로 하이브리드 마이그레이션 수행 (1,200명 유저)</li>
         </ul>
     </section>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-card">
-            <span class="project-tag">Migration</span>
-            <h3>OO그룹 M365 도입 및 하이브리드 AD 구축</h3>
-            <p>기존 온프레미스 인프라를 클라우드로 확장하여 1,000명 이상의 유저가 사용하는 협업 환경 구축 및 데이터 마이그레이션 성공.</p>
-        </div>
-        <div class="project-card">
-            <span class="project-tag">Security</span>
-            <h3>전사 Windows Server 보안 고도화 프로젝트</h3>
-            <p>200여 대 서버에 대한 표준 보안 정책(GPO)을 수립하고 자동화 패치 시스템 구축을 통해 운영 효율 30% 향상.</p>
+    <section>
+        <h2>Challenges & Solutions</h2>
+        <div class="solution-box">
+            <strong>Problem:</strong> 동기화 과정에서 기존 온프레미스 계정의 중복 및 UPN 불일치로 인한 동기화 오류 대거 발생.
+            <br><br>
+            <strong>Solution:</strong> PowerShell 스크립트를 작성하여 전사 계정의 ID 전수 조사를 실시하고, 중복된 메일 주소 및 특수문자가 포함된 UPN을 일괄 정제하는 전처리 과정을 통해 동기화 성공률 100% 달성.
         </div>
     </section>
 
-    <div class="contact-info">
-        <h2>Get In Touch</h2>
-        <p>비즈니스 인프라의 안정성을 함께 고민하겠습니다.</p>
-        <a href="mailto:email@example.com">Email</a> | 
-        <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a> | 
-        <a href="https://github.com/username" target="_blank">GitHub</a>
-    </div>
-</div>
+    <section>
+        <h2>Project Results</h2>
+        <div class="result-grid">
+            <div class="result-item">
+                <span class="number">1,200+</span>
+                <p>유저 계정 성공적 이관</p>
+            </div>
+            <div class="result-item">
+                <span class="number">30%</span>
+                <p>관리 운영 리소스 절감</p>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
-    &copy; 2024 System Engineer Portfolio. All rights reserved.
+    &copy; 2024 System Engineer [성함]. All rights reserved.
 </footer>
 
 </body>
